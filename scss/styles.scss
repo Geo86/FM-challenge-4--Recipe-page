@@ -8,18 +8,6 @@
 /* Remove default margins */
 body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {  margin: 0; }
 
-/* Remove list styles */
-ul, ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
 
 /* Remove default link styles */
 a {
@@ -44,10 +32,106 @@ IMPORT FONTS
 
 /*COLOR PALETTE*/
 
-$primary-color: hsl(75, 94%, 57%);
-$secondary-color: hsl(0, 0%, 12%);
-$tertiary-color:hsl(0, 0%, 20%);
-$quaternary-color: #eeeeee;
+$primary-color: hsl(14, 45%, 36%);
+$secondary-color: #f3e5d8;
 $light-color: hsl(0, 0%, 100%);
-$dark-color: hsl(0, 0%, 8%);
+$dark-color: hsla(0, 0%, 8%, 0.711);
+$dark-color2: #2f2f2c91;
+$important-color: #fff7fc;
+$important-text-color: #613147;
 
+/*list styles */
+
+ol li {
+    padding-left: 1rem;
+}
+
+li span, ol span{
+    color: $dark-color2;
+}
+
+ul, ol{
+    color:$primary-color;
+}
+
+ul li {
+    line-height: 1.9rem;
+}
+/* MIXINS*/
+
+@mixin border-radius($value){border-radius:$value;}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: "Outfit", sans-serif; 
+  background-color: $secondary-color;
+  color:#949391;
+
+  strong{
+    color:$dark-color;
+  }
+}
+
+h1,h2,h3,h4{
+    font-family: "Young Serif", serif;
+    color:$primary-color;
+    margin-bottom: 1rem;
+}
+
+.recipe{
+
+    background-color: $light-color;
+    max-width: 700px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 10px;
+
+    @media (min-width: 768px) { margin-top: 4rem;}
+
+    &__title, &__introduction, &__time-prep, &__ingredients, &__instructions, &__nutrition{ padding: 0 2.2rem;}
+    &__title{ color:$dark-color; }
+
+    &__thumbnail{
+
+        @media (min-width: 768px) {
+            @include  border-radius(40px);
+            padding: 2rem  2rem 0 2rem;
+        }
+    }
+
+    &__figcaption{ display:none; }
+
+    &__time-prep{
+
+        background-color: $important-color;
+        align-self: center;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        width: 85%;
+
+        @media (min-width: 768px) { width: 90%; }
+
+        @include  border-radius(10px);
+
+    }
+
+    &__time-prep-title{
+        font-size: 1.1rem;
+        font-family:"Outfit", sans-serif;
+        font-weight: bold;
+        color:$important-text-color;
+        margin:0;
+    }
+
+    &__instructions{
+        hr{
+          border: 1px solid #5d5d5d17;
+          margin-top: 1rem;
+        }
+    }
+
+}

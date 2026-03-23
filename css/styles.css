@@ -1,3 +1,126 @@
+/*RESET*/
+/* Simple CSS Reset */
+/* Box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
+/* Remove default margins */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Make images easier to work with */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form elements inherit font */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/**************
+IMPORT FONTS
+**************/
+/*COLOR PALETTE*/
+/*list styles */
+ol li {
+  padding-left: 1rem;
+}
+
+li span, ol span {
+  color: rgba(47, 47, 44, 0.568627451);
+}
+
+ul, ol {
+  color: hsl(14, 45%, 36%);
+}
+
+ul li {
+  line-height: 1.9rem;
+}
+
+/* MIXINS*/
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: "Outfit", sans-serif;
+  background-color: #f3e5d8;
+  color: #949391;
+}
+body strong {
+  color: hsla(0, 0%, 8%, 0.711);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Young Serif", serif;
+  color: hsl(14, 45%, 36%);
+  margin-bottom: 1rem;
+}
+
+.recipe {
+  background-color: hsl(0, 0%, 100%);
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 10px;
+}
+@media (min-width: 768px) {
+  .recipe {
+    margin-top: 4rem;
+  }
+}
+.recipe__title, .recipe__introduction, .recipe__time-prep, .recipe__ingredients, .recipe__instructions, .recipe__nutrition {
+  padding: 0 2.2rem;
+}
+.recipe__title {
+  color: hsla(0, 0%, 8%, 0.711);
+}
+@media (min-width: 768px) {
+  .recipe__thumbnail {
+    border-radius: 40px;
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+.recipe__figcaption {
+  display: none;
+}
+.recipe__time-prep {
+  background-color: #fff7fc;
+  align-self: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  width: 85%;
+}
+@media (min-width: 768px) {
+  .recipe__time-prep {
+    width: 90%;
+  }
+}
+.recipe__time-prep {
+  border-radius: 10px;
+}
+.recipe__time-prep-title {
+  font-size: 1.1rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  color: #613147;
+  margin: 0;
+}
+.recipe__instructions hr {
+  border: 1px solid rgba(93, 93, 93, 0.0901960784);
+  margin-top: 1rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
