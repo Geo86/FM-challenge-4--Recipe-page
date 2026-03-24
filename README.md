@@ -22,11 +22,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./preview.png)
+![](./screenshot_recipe.png)
 
 ### Links
 
-- My solution URL: [Link](https://geo86.github.io/FM-challenge-4--Recipe-page/)
+- My solution URL: [Link](https://geo86.github.io/FM-challenge-3--social-links-profile/)
 
 ### Built with
 
