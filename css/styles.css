@@ -32,7 +32,7 @@ IMPORT FONTS
 **************/
 /*COLOR PALETTE*/
 /*list styles */
-ol li {
+ol li, ul li {
   padding-left: 1rem;
 }
 
@@ -74,18 +74,12 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border-radius: 10px;
 }
 @media (min-width: 768px) {
   .recipe {
     margin-top: 4rem;
+    border-radius: 10px;
   }
-}
-.recipe__title, .recipe__introduction, .recipe__time-prep, .recipe__ingredients, .recipe__instructions, .recipe__nutrition {
-  padding: 0 2.2rem;
-}
-.recipe__title {
-  color: hsla(0, 0%, 8%, 0.711);
 }
 @media (min-width: 768px) {
   .recipe__thumbnail {
@@ -96,20 +90,25 @@ h1, h2, h3, h4 {
 .recipe__figcaption {
   display: none;
 }
+.recipe__title {
+  color: hsla(0, 0%, 8%, 0.711);
+  margin-bottom: 0;
+}
+.recipe__title, .recipe__introduction, .recipe__time-prep, .recipe__ingredients, .recipe__instructions, .recipe__nutrition {
+  padding: 0 2.2rem;
+}
 .recipe__time-prep {
   background-color: #fff7fc;
   align-self: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   width: 85%;
+  border-radius: 10px;
 }
 @media (min-width: 768px) {
   .recipe__time-prep {
     width: 90%;
   }
-}
-.recipe__time-prep {
-  border-radius: 10px;
 }
 .recipe__time-prep-title {
   font-size: 1.1rem;
@@ -121,6 +120,31 @@ h1, h2, h3, h4 {
 .recipe__instructions hr {
   border: 1px solid rgba(93, 93, 93, 0.0901960784);
   margin-top: 1rem;
+}
+.recipe__table-data {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+.recipe__table-data caption {
+  display: none;
+}
+.recipe__table-data th {
+  font-weight: 500;
+}
+.recipe__table-data tr {
+  border-bottom: 1px solid rgba(93, 93, 93, 0.0901960784);
+  text-align: left;
+}
+.recipe__table-data tr:last-child {
+  border-bottom: none;
+}
+.recipe__table-data td {
+  color: hsl(14, 45%, 36%);
+  font-weight: bold;
+}
+.recipe__table-data th, .recipe__table-data td {
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

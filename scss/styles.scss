@@ -36,27 +36,20 @@ $primary-color: hsl(14, 45%, 36%);
 $secondary-color: #f3e5d8;
 $light-color: hsl(0, 0%, 100%);
 $dark-color: hsla(0, 0%, 8%, 0.711);
-$dark-color2: #2f2f2c91;
+$dark-color-second: #2f2f2c91;
 $important-color: #fff7fc;
 $important-text-color: #613147;
+$light-grey: rgba(93, 93, 93, 0.0901960784);
 
 /*list styles */
 
-ol li {
-    padding-left: 1rem;
-}
+ol li, ul li { padding-left: 1rem;}
 
-li span, ol span{
-    color: $dark-color2;
-}
+li span, ol span{ color: $dark-color-second;}
 
-ul, ol{
-    color:$primary-color;
-}
+ul, ol{ color:$primary-color;}
 
-ul li {
-    line-height: 1.9rem;
-}
+ul li { line-height: 1.9rem;}
 /* MIXINS*/
 
 @mixin border-radius($value){border-radius:$value;}
@@ -88,13 +81,12 @@ h1,h2,h3,h4{
     display:flex;
     flex-direction: column;
     gap: 1.5rem;
-    border-radius: 10px;
 
-    @media (min-width: 768px) { margin-top: 4rem;}
-
-    &__title, &__introduction, &__time-prep, &__ingredients, &__instructions, &__nutrition{ padding: 0 2.2rem;}
-    &__title{ color:$dark-color; }
-
+    @media (min-width: 768px){
+         margin-top: 4rem;
+         @include border-radius(10px);
+    }
+    
     &__thumbnail{
 
         @media (min-width: 768px) {
@@ -105,6 +97,13 @@ h1,h2,h3,h4{
 
     &__figcaption{ display:none; }
 
+    &__title{ 
+        color:$dark-color;
+        margin-bottom: 0; 
+    }
+  
+    &__title, &__introduction, &__time-prep, &__ingredients, &__instructions, &__nutrition{ padding: 0 2.2rem;}
+        
     &__time-prep{
 
         background-color: $important-color;
@@ -112,11 +111,8 @@ h1,h2,h3,h4{
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         width: 85%;
-
-        @media (min-width: 768px) { width: 90%; }
-
         @include  border-radius(10px);
-
+        @media (min-width: 768px) { width: 90%; }
     }
 
     &__time-prep-title{
@@ -129,9 +125,34 @@ h1,h2,h3,h4{
 
     &__instructions{
         hr{
-          border: 1px solid #5d5d5d17;
+          border: 1px solid $light-grey;
           margin-top: 1rem;
         }
     }
 
+    &__table-data{
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        
+        caption{
+            display:none;
+        }
+
+        th{font-weight: 500;}
+
+        tr{
+            border-bottom: 1px solid $light-grey;
+            text-align: left;
+        }
+
+        tr:last-child{ border-bottom: none;}
+
+        td{
+            color:$primary-color;
+            font-weight: bold;
+        }
+
+        th,td{ padding:1rem;}
+    }
 }
