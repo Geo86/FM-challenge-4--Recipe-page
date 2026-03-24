@@ -82,8 +82,9 @@ h1,h2,h3,h4{
     flex-direction: column;
     gap: 1.5rem;
 
+
     @media (min-width: 768px){
-         margin-top: 4rem;
+         margin: 4rem auto;
          @include border-radius(10px);
     }
     
@@ -151,8 +152,9 @@ h1,h2,h3,h4{
         td{
             color:$primary-color;
             font-weight: bold;
+            padding-left: 1rem;
         }
 
-        th,td{ padding:1rem;}
+        th{ padding: 1rem 1rem 1rem 1.8rem;}
     }
 }
