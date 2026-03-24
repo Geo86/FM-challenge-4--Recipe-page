@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- My solution URL: [Link](https://geo86.github.io/FM-challenge-3--social-links-profile/)
+- My solution URL: [Link](https://geo86.github.io/FM-challenge-4--Recipe-page/)
 
 ### Built with
 
